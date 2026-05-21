@@ -166,7 +166,7 @@ Run:
 streamlit run app.py
 ```
 
-6. Tempature
+## Tempature
 LLM temperature is a setting that controls the randomness and creativity of an AI's responses. It acts like a dial between a highly focused, factual assistant and a free-spirited storyteller.Adjusting this setting shapes the AI's behavior:
 Low Temperature (0.0 to 0.3): Highly focused, logical, and predictable. The AI chooses the most probable next words, making it ideal for tasks that require accuracy, such as coding, math, data extraction, or answering factual questions.
 Medium Temperature (0.4 to 0.7): A balanced approach. Good for general conversational tasks where you want the AI to sound natural while still staying relatively on topic.

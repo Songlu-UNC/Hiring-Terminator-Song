@@ -166,51 +166,7 @@ Run:
 streamlit run app.py
 ```
 
-## Suggested demo script
 
-1. Upload the Applied AI Product Intern JD.
-2. Upload several candidate resumes.
-3. Click **Run Candidate Matching**.
-4. Show the extracted role analysis.
-5. Show the recommendation table.
-6. Open one candidate detail panel.
-7. Explain the human validation questions.
-8. Edit the client-ready summary to show the human-in-the-loop step.
-
-## Product tradeoffs
-
-### What this prototype does well
-
-- Simple and fast to build
-- Easy to demo
-- Customer can bring their own API key
-- Produces structured recruiter-facing output
-- Keeps humans in control
-- Shows evidence instead of only a score
-
-### What is intentionally not included
-
-- Sourcing
-- LinkedIn search
-- Outreach automation
-- ATS integration
-- User authentication
-- Database persistence
-- Full audit log
-- Multi-user approval workflow
-
-## Future improvements
-
-- Add database storage for JDs, candidates, and human edits
-- Add recruiter approval status
-- Add export to PDF or ATS format
-- Add red-flag detection
-- Add model comparison
-- Add interview-kit generation
-- Add candidate ranking explanations
-- Add batch processing for larger resume sets
-- Add role-specific scoring rubric editor
-- Add structured feedback loop from recruiter decisions
 
 ## Responsible use
 

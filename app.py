@@ -78,7 +78,8 @@ if run_btn:
             model=model,
             temperature=temperature,
             system_prompt=SYSTEM_PROMPT,
-            user_prompt=ROLE_ANALYSIS_PROMPT.format(jd_text=jd_text),
+            # Use replace instead of format to avoid KeyError from JSON braces
+            user_prompt=ROLE_ANALYSIS_PROMPT.replace("{jd_text}", jd_text),
         )
 
     st.subheader("2. Role Requirement Understanding")
@@ -95,10 +96,16 @@ if run_btn:
                 model=model,
                 temperature=temperature,
                 system_prompt=SYSTEM_PROMPT,
-                user_prompt=CANDIDATE_ANALYSIS_PROMPT.format(
-                    jd_text=jd_text,
-                    role_analysis_json=json.dumps(role_analysis, ensure_ascii=False, indent=2),
-                    resume_text=resume["text"],
+                # Build the user prompt by replacing placeholders to avoid
+                # interpreting JSON braces as format fields.
+                user_prompt=(
+                    CANDIDATE_ANALYSIS_PROMPT
+                    .replace("{jd_text}", jd_text)
+                    .replace(
+                        "{role_analysis_json}",
+                        json.dumps(role_analysis, ensure_ascii=False, indent=2),
+                    )
+                    .replace("{resume_text}", resume["text"])
                 ),
             )
             result["source_file"] = resume["filename"]
